@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="product2.css" />
+  <title>Roll-on Attar Perfume</title>
+  
+</head>
+<body>
+
+  <!-- Header with Cart Icon -->
+  <div class="header">
+    <img src="yamanlogo.png" height="100" alt="100" name="logo">
+    <div class="cart-icon">
+      🛒 Cart <span class="cart-count" id="cart-count">0</span><p>📞 +91-7807115210</p>
+      <p>✉️ sheikhyaman0007@gmail.com</p>
+    </div>
+  </div>
+    
+      
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="Home.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Product.html">Products</a>
+    <a href="Contact.html">Contact</a>
+  </nav>
+  
+
+  <!-- Product Section -->
+  <div class="product-container">
+    <div class="image-section">
+      <img src="yamana4.jpeg" height="200" alt="Roll-on Attar Perfume" /> <img src="Al-Nuaim-Chocolate-Musk-Silver-Series-Alcohol-Free-Perfume-Roll-On-6-ml-2.webp" height="200" alt="Roll-on Attar perfume"> <img src="4.png" height="200" alt="Roll-on Attar perfume">
+    </div>
+    <div class="details-section">
+      <h1>Al Nuaim CHOCOLATE MUSK</h1>
+      <p class="subtitle">6ML Roll-On | Long Lasting | Alcohol-Free</p>
+      <p class="price">₹ 399</p>
+      <p class="description">
+        A luxurious blend of musk, our Musk Attar is crafted to leave a lasting impression.
+        Made with pure essential oils and free from alcohol, this 10ml roll-on perfume is perfect for daily wear or special occasions Shanaya Luxury Attar Perfume | Long Lasting Fragrance | Attar Perfume for Men & Women.
+      </p>
+      <button class="btn-add" onclick="addToCart()">Add to Cart</button>
+      <div class="added-msg" id="added-msg">✅ Added to cart!</div>
+    </div>
+  </div>
+
+  <script>
+    let cartCount = 0;
+
+    function addToCart() {
+      cartCount++;
+      document.getElementById('cart-count').innerText = cartCount;
+      const msg = document.getElementById('added-msg');
+      msg.style.display = 'block';
+
+      // Hide message after 2 seconds
+      setTimeout(() => {
+        msg.style.display = 'none';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
+<!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-section">
+        <h4>About Us</h4>
+        <p>We offer high-quality products with customer satisfaction as our top priority.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>📞 +91-7807115210</p>
+        <p>✉️ sheikhyaman0007@gmail.com</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <a href="https://www.instagram.com/sheikhsattar_07/" target="_blank">
+          <img src="instagram logo.png" alt="Instagram Profile" style="width:50px; height:50px;">
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Your Company. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+

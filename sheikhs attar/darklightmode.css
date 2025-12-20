@@ -1,0 +1,18 @@
+/* Default Light Mode */
+body {
+  background-color: #ffffff;
+  color: #222;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
