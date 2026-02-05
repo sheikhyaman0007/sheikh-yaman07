@@ -13,7 +13,8 @@
       "default",
       {
         "ignore": [
-          "iframe[referrerpolicy=no-referrer-when-downgrade]"
+          "iframe[referrerpolicy=no-referrer-when-downgrade]",
+          "video[playsinline]"
         ]
       }
     ]
