@@ -1,13 +1,26 @@
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(14, 14, 14);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
     padding: 0px;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --gold: #d4af37;        /* Classic gold */
+  --soft-gold: #f5e6b3;
+  --dark: #f6f3f3;
+  --light: #fff;
+}
 
 header {
-    background-color: rgb(#f5f5f5);
-    color: rgb(19, 19, 19);
+    background-color: rgb(#a59b9b);
+    color: #d4af37;
     display: flex;
     justify-content: space-between;
     text-align: center; 
@@ -30,7 +43,7 @@ header img :hover{
 }
 
 .navbar {
-    background-color: rgb(#1ad3cd);
+    background-color: rgb(#090909);
     text-align: center;
     text-decoration: none;
     font-size: larger;
@@ -60,7 +73,7 @@ header img :hover{
 }
 
 .about-section h2 {
-  color: #0077b6;
+  color: #101010;
   margin-bottom: 20px;
 }
 
@@ -97,7 +110,7 @@ header img :hover{
 }
 
 .feacture-product {
-    background-color: #007685;
+    background-color: #141414;
     padding: right 1%; ;
     justify-content:center;
     text-align: center;
