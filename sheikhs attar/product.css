@@ -7,12 +7,12 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #00b7ff;
+  background-color: #030303;
 }
 
 /* Header */
 .header {
-  background: #99e4f1;
+  background: #111010;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -21,11 +21,20 @@ body {
 
 .contact-info p {
   margin: 2px 0;
+  color: #B8963A;
+;
 }
 
 /* Navbar */
 .navbar {
-  background: #016be4;
+  background: linear-gradient(
+  135deg,
+  #7a5c1e,
+  #d4af37,
+  #c7ac32,
+  #d4af37,
+  #7a5c1e
+);
   padding: 10px;
   text-align: center;
 }
@@ -39,8 +48,8 @@ body {
 
 /* Products Header */
 .products-header {
-  background-color: #00b7ff;
-  color: #000;
+  background-color: #1d1d1d;
+  color: #ab8841;
   text-align: center;
   font-size: 50px;
   padding: 40px 20px;
@@ -58,18 +67,29 @@ body {
 }
 
 .product {
-  background: #fff;
+  
+  background: linear-gradient(
+  135deg,
+  #7a5c1e,
+  #d4af37,
+  #f5e28b,
+  #d4af37,
+  #7a5c1e
+);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
   padding: 20px;
   width: 220px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(195, 192, 192, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(29, 29, 29, 0.15);
 }
 
 .product img {
