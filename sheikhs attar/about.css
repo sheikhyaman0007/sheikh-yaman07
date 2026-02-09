@@ -27,7 +27,7 @@ body {
 .header .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #ff7f50;
+    color: #d4af37;
 }
 
 .header .nav a {
@@ -39,12 +39,12 @@ body {
 }
 
 .header .nav a:hover {
-    color: #ff5722;
+    color: #d4af37;
 }
 
 /* ===== BANNER ===== */
 .banner {
-    background: url('banner.jpg') center/cover no-repeat;
+    background: url('b278d029-c12f-4294-8a26-352c662af49d.png') center/cover no-repeat;
     height: 250px;
     display: flex;
     align-items: center;
@@ -123,7 +123,7 @@ body {
 }
 
 .about-image img {
-    max-width: 100%;
+    max-width: 50%;
     border-radius: 15px;
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
@@ -146,7 +146,7 @@ body {
 
 .vm-container h2 {
     font-size: 28px;
-    color: #ff7f50;
+    color: #d4af37;
     margin-bottom: 15px;
 }
 
@@ -183,7 +183,7 @@ body {
 
 .footer-box h3 {
     font-size: 20px;
-    color: #ff7f50;
+    color: #d4af37;
     margin-bottom: 15px;
 }
 
@@ -206,7 +206,7 @@ body {
 }
 
 .footer-box ul li:hover {
-    color: #ff7f50;
+    color: #d4af37;
 }
 
 .footer-bottom {
@@ -226,7 +226,7 @@ body {
 }
 
 .social-icons span:hover {
-    color: #ff7f50;
+    color: #d4af37;
 }
 
 /* ===== ANIMATIONS ===== */
