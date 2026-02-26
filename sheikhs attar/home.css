@@ -17,7 +17,6 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 30px;
-border-bottom:2px solid #d4af37;
 }
 .header img{width:140px;}
 .contact p{font-size:14px;color:#f5e6b3}
