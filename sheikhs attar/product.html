@@ -273,6 +273,22 @@
   <div class="footer-bottom">
     <p>© 2026 Sheikhs Attar. Every scent reserved..</p>
   </div>
+  <script>
+window.addEventListener("scroll", function(){
+  const products = document.querySelectorAll(".product");
+
+  products.forEach(product => {
+    const productTop = product.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if(productTop < windowHeight - 50){
+      product.style.opacity = "1";
+      product.style.transform = "translateY(0)";
+      product.style.transition = "0.8s ease";
+    }
+  });
+});
+</script>
 </footer>
 
 </body>
