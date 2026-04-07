@@ -1,110 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="product2.css" />
-  <title>Roll-on Attar Perfume</title>
-  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roll-on Attar Perfume</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  background:#f1f3f6;
+}
+
+/* HEADER */
+.header{
+  background:#ffffff;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo img{
+  height:70px;
+}
+
+.right-header{
+  text-align:right;
+  font-size:14px;
+}
+
+.cart-icon{
+  font-weight:bold;
+  cursor:pointer;
+  position:relative;
+}
+
+.cart-count{
+  background:#d35400;
+  color:white;
+  padding:2px 6px;
+  border-radius:50%;
+  font-size:12px;
+  margin-left:5px;
+}
+
+/* NAVBAR */
+.navbar{
+  background:#d35400;
+  padding:12px;
+  text-align:center;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  margin:0 20px;
+  font-weight:bold;
+}
+
+/* PRODUCT */
+.product-container{
+  max-width:1100px;
+  margin:40px auto;
+  display:flex;
+  flex-wrap:wrap;
+  background:white;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* IMAGE SLIDER */
+.image-section{
+  flex:1;
+  padding:30px;
+  text-align:center;
+  position:relative;
+}
+
+.slide{
+  display:none;
+}
+
+.slide img{
+  width:100%;
+  max-height:400px;
+  object-fit:contain;
+}
+
+.prev, .next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#d35400;
+  color:white;
+  border:none;
+  padding:10px 15px;
+  cursor:pointer;
+}
+
+.prev{ left:0; }
+.next{ right:0; }
+
+/* DETAILS */
+.details-section{
+  flex:1;
+  padding:40px;
+}
+
+.price{
+  font-size:24px;
+  color:#d35400;
+  margin:15px 0;
+}
+
+.more-text{
+  display:none;
+}
+
+.read-btn{
+  background:none;
+  border:none;
+  color:#d35400;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:5px;
+}
+
+.btn{
+  padding:12px 25px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  margin-top:15px;
+  color:white;
+}
+
+.btn-cart{ background:#d35400; }
+.btn-buy{ background:#ff9f00; }
+
+.added-msg{
+  color:green;
+  margin-top:10px;
+  display:none;
+}
+
+/* CART SIDEBAR */
+#cartSidebar{
+  position:fixed;
+  right:-400px;
+  top:0;
+  width:350px;
+  height:100%;
+  background:white;
+  box-shadow:-2px 0 10px rgba(0,0,0,0.2);
+  padding:20px;
+  transition:0.3s;
+  overflow-y:auto;
+  z-index:1000;
+}
+
+/* FOOTER */
+.footer{
+  background:#222;
+  color:white;
+  padding:30px 20px;
+  margin-top:40px;
+  text-align:center;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .product-container{
+    flex-direction:column;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Header with Cart Icon -->
-  <div class="header">
-    <img src="yamanlogo.png" height="100" alt="100" name="logo">
-    <div class="cart-icon">
-      🛒 Cart <span class="cart-count" id="cart-count">0</span><p>📞 +91-7807115210</p>
-      <p>✉️ sheikhyaman0007@gmail.com</p>
-    </div>
-  </div>
-    
-      
-    </div>
-  </header>
-
-  <!-- Navigation -->
-  <nav class="navbar">
-    <a href="Home.html">Home</a>
-    <a href="About.html">About</a>
-    <a href="Product.html">Products</a>
-    <a href="Contact.html">Contact</a>
-  </nav>
-  
-
-  <!-- Product Section -->
-  <div class="product-container">
-    <div class="image-section">
-      <img src="yamana4.jpeg" height="200" alt="Roll-on Attar Perfume" /> <img src="Al-Nuaim-Chocolate-Musk-Silver-Series-Alcohol-Free-Perfume-Roll-On-6-ml-2.webp" height="200" alt="Roll-on Attar perfume"> <img src="4.png" height="200" alt="Roll-on Attar perfume">
-    </div>
-    <div class="details-section">
-      <h1>Al Nuaim CHOCOLATE MUSK</h1>
-      <p class="subtitle">6ML Roll-On | Long Lasting | Alcohol-Free</p>
-      <p class="price">₹ 399</p>
-      <p class="description">
-        A luxurious blend of musk, our Musk Attar is crafted to leave a lasting impression.
-        Made with pure essential oils and free from alcohol, this 10ml roll-on perfume is perfect for daily wear or special occasions Shanaya Luxury Attar Perfume | Long Lasting Fragrance | Attar Perfume for Men & Women.
-      </p>
-      <button class="btn-add" onclick="addToCart()">Add to Cart</button>
-      <div class="added-msg" id="added-msg">✅ Added to cart!</div>
-    </div>
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">
+    <img src="yamanlogo.png">
   </div>
 
-  <script>
-    let cartCount = 0;
+  <div class="right-header">
+    <div class="cart-icon" onclick="toggleCart()">
+      🛒 Cart <span class="cart-count" id="cart-count">0</span>
+    </div>
+    <div>📞 +91-7807115210</div>
+    <div>✉️ sheikhyaman0007@gmail.com</div>
+  </div>
+</div>
 
-    function addToCart() {
-      cartCount++;
-      document.getElementById('cart-count').innerText = cartCount;
-      const msg = document.getElementById('added-msg');
-      msg.style.display = 'block';
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="home.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="product.html">Products</a>
+  <a href="contact.html">Contact</a>
+</nav>
 
-      // Hide message after 2 seconds
-      setTimeout(() => {
-        msg.style.display = 'none';
-      }, 2000);
-    }
-  </script>
+<!-- PRODUCT SECTION -->
+<div class="product-container">
+
+  <div class="image-section">
+    <div class="slide"><img src="yamana4.jpeg"></div>
+    <div class="slide"><img src="chocolatemusk1.webp"></div>
+    <div class="slide"><img src="Blueberry_Musk_8.webp"></div>
+
+    <button class="prev" onclick="changeSlide(-1)">❮</button>
+    <button class="next" onclick="changeSlide(1)">❯</button>
+  </div>
+
+  <div class="details-section">
+    <h1>Al-nuaimm Blnu_Atbs_Choc-Musk_6Ml</h1>
+    <p>Al-nuaimm Blnu_Atbs_Choc-Musk_6Ml Floral (Musk, Chocolate) | Long Lasting Fragrance.</p>
+
+    <div class="price">₹399</div>
+
+    Quantity:
+    <input type="number" id="qty" value="1" min="1" style="width:60px;padding:5px;">
+
+    <p style="margin-top:15px;">
+      A luxurious blend of musk crafted to leave a lasting impression
+      <span class="dots">...</span>
+      <span class="more-text">
+        Made with pure essential oils and free from alcohol.
+        Perfect for daily wear and special occasions.
+      </span>
+    </p>
+
+    <button class="read-btn" onclick="toggleText(this)">Read More</button>
+
+    <br>
+
+    <button class="btn btn-cart" onclick="addToCart()">Add to Cart</button>
+    <button class="btn btn-buy" onclick="buyNow()">Buy Now</button>
+
+    <div class="added-msg" id="added-msg">✅ Added to cart!</div>
+  </div>
+
+</div>
+
+<!-- CART SIDEBAR -->
+<div id="cartSidebar">
+  <h2>Your Cart</h2>
+  <div id="cartItems"></div>
+  <h3 id="cartTotal"></h3>
+  <button onclick="toggleCart()">Close</button>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2025 Your Company. All rights reserved.
+</div>
+
+<script>
+
+/* CART */
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(){
+  const qty = parseInt(document.getElementById("qty").value);
+
+  cart.push({
+    name:"Shanaya Luxury Attar",
+    price:399,
+    quantity:qty
+  });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCart();
+
+  const msg=document.getElementById("added-msg");
+  msg.style.display="block";
+  setTimeout(()=>{msg.style.display="none";},2000);
+}
+
+function updateCart(){
+  const cartItems=document.getElementById("cartItems");
+  const cartCount=document.getElementById("cart-count");
+  const cartTotal=document.getElementById("cartTotal");
+
+  cartItems.innerHTML="";
+  let total=0;
+  let count=0;
+
+  cart.forEach((item,index)=>{
+    total+=item.price*item.quantity;
+    count+=item.quantity;
+
+    cartItems.innerHTML+=`
+      <div style="border-bottom:1px solid #ddd;padding:10px 0;">
+        <p>${item.name}</p>
+        <p>${item.quantity} x ₹${item.price}</p>
+        <button onclick="removeItem(${index})"
+        style="background:red;color:white;border:none;padding:5px 8px;cursor:pointer;">
+        Remove</button>
+      </div>
+    `;
+  });
+
+  cartCount.innerText=count;
+  cartTotal.innerText="Total: ₹"+total;
+}
+
+function removeItem(index){
+  cart.splice(index,1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCart();
+}
+
+function toggleCart(){
+  const sidebar=document.getElementById("cartSidebar");
+  sidebar.style.right = sidebar.style.right==="0px" ? "-400px" : "0px";
+}
+
+function buyNow(){
+  addToCart();
+  alert("Proceeding to checkout...");
+}
+
+/* READ MORE */
+function toggleText(button){
+  const more=document.querySelector(".more-text");
+  const dots=document.querySelector(".dots");
+
+  if(more.style.display==="inline"){
+    more.style.display="none";
+    dots.style.display="inline";
+    button.innerText="Read More";
+  }else{
+    more.style.display="inline";
+    dots.style.display="none";
+    button.innerText="Read Less";
+  }
+}
+
+/* SLIDER */
+let slideIndex=0;
+const slides=document.getElementsByClassName("slide");
+
+function showSlide(index){
+  if(index>=slides.length) slideIndex=0;
+  if(index<0) slideIndex=slides.length-1;
+  for(let i=0;i<slides.length;i++){
+    slides[i].style.display="none";
+  }
+  slides[slideIndex].style.display="block";
+}
+
+function changeSlide(n){
+  slideIndex+=n;
+  showSlide(slideIndex);
+}
+
+showSlide(slideIndex);
+updateCart();
+
+</script>
+
 </body>
 </html>
-<!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-
-      <div class="footer-section">
-        <h4>About Us</h4>
-        <p>We offer high-quality products with customer satisfaction as our top priority.</p>
-      </div>
-
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="Home.html">Home</a></li>
-          <li><a href="About.html">About</a></li>
-          <li><a href="Product.html">Products</a></li>
-          <li><a href="Contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <p>📞 +91-7807115210</p>
-        <p>✉️ sheikhyaman0007@gmail.com</p>
-      </div>
-
-      <div class="footer-section">
-        <h4>Follow Us</h4>
-        <a href="https://www.instagram.com/sheikhsattar_07/" target="_blank">
-          <img src="instagram logo.png" alt="Instagram Profile" style="width:50px; height:50px;">
-        </a>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2025 Your Company. All rights reserved.</p>
-    </div>
-  </footer>
-
-</body>
-</html>
-
