@@ -27,6 +27,31 @@
   <a href="product.html">Products</a>
   <a href="contact.html">Contact</a>
 </nav>
+<section class="celebs">
+  <h2>LOVED BY CELEBRITIES</h2>
+
+  <div class="celebs-wrapper">
+    <div class="celebs-slider">
+
+      <div class="celebs-card active">
+        <video src="id1.mov" muted loop></video>
+      </div>
+
+      <div class="celebs-card">
+        <video src="video2.mp4" muted loop></video>
+      </div>
+
+      <div class="celebs-card">
+        <video src="video3.mp4" muted loop></video>
+      </div>
+
+      <div class="celebs-card">
+        <video src="video4.mp4" muted loop></video>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- Banner -->
 <div class="container-box">
@@ -226,11 +251,44 @@
       <img src="instagram logo.png" alt="Instagram Profile" style="width:50px; height:50px;">
     </a>
 
-  </div>
+<script>
+const cards = document.querySelectorAll(".celebs-card");
+let index = 0;
 
+function updateSlider() {
+  cards.forEach((card, i) => {
+    const video = card.querySelector("video");
+
+    card.classList.remove("active");
+    video.pause();
+
+    if (i === index) {
+      card.classList.add("active");
+      video.play();
+    }
+  });
+
+  index++;
+  if (index >= cards.length) index = 0;
+}
+
+setInterval(updateSlider, 2500);
+
+// hover control
+cards.forEach((card, i) => {
+  card.addEventListener("mouseenter", () => {
+    index = i;
+    updateSlider();
+  });
+});
+
+// start
+updateSlider();
+</script>
   <!-- COPYRIGHT -->
   <div class="footer-bottom">
     <p>© 2026 Sheikhs Attar. Every scent reserved..</p>
+
   </div>
 </footer>
 

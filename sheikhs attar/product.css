@@ -345,3 +345,95 @@ body{
     text-align:center;
   }
 }
+/* ===================== */
+/* PREMIUM PRODUCT ANIMATIONS */
+/* ===================== */
+
+/* Smooth scroll feel */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll reveal upgrade */
+.product {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+}
+
+/* When visible */
+.product.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Stagger effect auto */
+.product:nth-child(odd) {
+  transition-delay: 0.1s;
+}
+.product:nth-child(even) {
+  transition-delay: 0.2s;
+}
+
+/* Premium hover (glass + glow) */
+.product {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Golden glow */
+.product::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #d4af37, transparent, #d4af37);
+  opacity: 0;
+  transition: 0.4s;
+  z-index: -1;
+  filter: blur(15px);
+}
+
+.product:hover::before {
+  opacity: 0.6;
+}
+
+/* Shine animation */
+.product::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: 0.7s;
+}
+
+.product:hover::after {
+  left: 120%;
+}
+
+/* Image premium hover */
+.product img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.product:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+/* Text smooth */
+.product h3 {
+  transition: 0.3s;
+}
+
+.product:hover h3 {
+  color: #fff;
+}
