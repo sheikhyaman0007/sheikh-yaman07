@@ -269,7 +269,7 @@ box-shadow:0 0 15px rgba(37,211,102,.7);
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 1024px) {
     .header {
-        padding: 20px 40px;
+        padding: 2px 40px;
     }
     .about {
         padding: 60px 40px;
@@ -332,7 +332,6 @@ to{opacity:1;transform:translateY(0)}
   padding: 80px 20px;
   background: linear-gradient(135deg, #000, #1a1a1a);
   text-align: center;
-  overflow: hidden;
 }
 
 .celebs h2 {
@@ -354,15 +353,14 @@ to{opacity:1;transform:translateY(0)}
 
 /* wrapper */
 .celebs-wrapper {
-  perspective: 1000px;
+  display: flex;
+  justify-content: center;
 }
 
 /* slider */
 .celebs-slider {
   display: flex;
-  gap: 30px;
-  justify-content: center;
-  transition: transform 0.8s ease;
+  gap: 25px;
 }
 
 /* card */
@@ -372,49 +370,46 @@ to{opacity:1;transform:translateY(0)}
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  transition: 0.5s ease;
-  filter: blur(3px);
-  transform: scale(0.9);
+  transition: 0.4s ease;
+  cursor: pointer;
+  transform: scale(0.95);
 }
 
-/* center active card */
+/* active */
 .celebs-card.active {
-  transform: scale(1.1);
-  filter: blur(0);
+  transform: scale(1.05);
   z-index: 2;
 }
 
-/* video */
+/* 🔥 VIDEO FIX (main solution) */
 .celebs-card video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center; /* sab ko same framing */
+  display: block;
 }
 
-/* glass overlay */
+/* 👇 FIRST VIDEO SPECIFIC FIX (important) */
+.celebs-card:first-child video {
+  object-position: 50% 20%; /* zoom adjust */
+}
+
+/* overlay */
 .celebs-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.6),
-    transparent
-  );
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
 }
 
 /* golden glow */
 .celebs-card.active::after {
   content: "";
   position: absolute;
-  inset: -5px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #d4af37, transparent);
+  inset: -6px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #d4af37, #ffd700, transparent);
   z-index: -1;
-  filter: blur(20px);
-}
-.celebs-card video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  filter: blur(18px);
 }
