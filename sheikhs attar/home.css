@@ -35,18 +35,69 @@ transition:.3s;
 }
 .navbar a:hover{color:#d4af37}
 
-/* =========================
-   VIDEO BANNER
-========================= */
 .container-box {
   width: 100%;
-  overflow: hidden;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #000, #1a1a1a);
 }
 
-.header-box video {
-  width: 100%;
-  height: auto;
-  display: block;
+/* FLEX LAYOUT */
+.header-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* LEFT IMAGE */
+.left-img img {
+  width: 75%; /* SAME size as you wanted */
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  transition: 0.4s ease;
+}
+
+.left-img img:hover {
+  transform: scale(1.05);
+}
+
+/* RIGHT CONTENT */
+.right-content {
+  max-width: 600px;
+  color: #fff;
+}
+
+.right-content h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: gold;
+}
+
+.right-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+/* BUTTON */
+.right-content button {
+  margin-top: 15px;
+  padding: 12px 28px;
+  background: linear-gradient(45deg, gold, #d4af37);
+  border: none;
+  border-radius: 30px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.right-content button:hover {
+  background: #fff;
+  transform: scale(1.05);
 }
 
 /* PRODUCTS */
