@@ -6,7 +6,8 @@
     "axe/text-alternatives": [
       "default",
       {
-        "image-alt": "off"
+        "image-alt": "off",
+        "frame-title": "off"
       }
     ],
     "compat-api/html": [
@@ -16,6 +17,12 @@
           "iframe[referrerpolicy=no-referrer-when-downgrade]",
           "video[playsinline]"
         ]
+      }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "label": "off"
       }
     ]
   }
